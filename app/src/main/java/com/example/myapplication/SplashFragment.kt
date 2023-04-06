@@ -28,7 +28,7 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_mainFragment2)
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
         },2000)
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }

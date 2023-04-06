@@ -75,7 +75,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/info_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
@@ -97,10 +97,10 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/info_date" />
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/info_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -113,7 +113,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/imageView9"
+                app:layout_constraintTop_toBottomOf="@id/info_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"

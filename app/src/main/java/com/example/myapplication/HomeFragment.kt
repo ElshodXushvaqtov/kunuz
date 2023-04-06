@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.adapter.Item_adapter
@@ -35,18 +37,22 @@ class HomeFragment : Fragment() {
         newsRV.add(Item(R.drawable.img_1,"Петербургдаги портлаш. Владлен Татарский ўзи ким эди?","20:27 / 03.04.2023"))
         newsRV.add(Item(R.drawable.img_2,"Ўзбекистонликлар бойкот қилган «Жара» фестивали қолдирилди   ","18:08 / 03.04.2023"))
         newsRV.add(Item(R.drawable.img_3,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
+        newsRV.add(Item(R.drawable.img_3,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
+        newsRV.add(Item(R.drawable.img_3,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
+        newsRV.add(Item(R.drawable.img_3,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
+        newsRV.add(Item(R.drawable.img_3,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
+        newsRV.add(Item(R.drawable.img_1,"Z-артистларга қарши кампания, ойликлар ошиши ва пасаймаган тезлик — ҳафта дайжести","09:13 / 02.04.2023"))
 
-        binding.rvHome.adapter=Item_adapter(newsRV)
+        binding.rvHome.adapter=Item_adapter(newsRV, object : Item_adapter.ItemClick {
+
+            override fun onItemClick(item: Item) {
+                val bundle = bundleOf("item" to item)
+                findNavController().navigate(R.id.action_homeFragment_to_infoFragment, bundle)
+            }
+
+        })
         return binding.root
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) = HomeFragment().apply {
-            arguments = Bundle().apply {
-                putString(ARG_PARAM1, param1)
-                putString(ARG_PARAM2, param2)
-            }
-        }
-    }
+
 }
